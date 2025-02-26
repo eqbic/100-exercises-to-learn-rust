@@ -9,7 +9,7 @@ members = [
 resolver = "2"
 
 [profile.dev]
-overflow-checks = false
+overflow-checks = true
 
 # This is needed to guarantee the expected behaviour on that specific exercise,
 # regardless of the "global" setting for `overflow-checks` on the `dev` profile.
