@@ -15,9 +15,15 @@ pub fn fibonacci(n: u32) -> u32 {
     //
     // Hint: use a `Vec` to memoize the results you have already calculated
     // so that you don't have to recalculate them several times.
-    todo!()
+    let mut result = Vec::from([0, 1]);
+    if n > 1 {
+        for x in 2..n + 1 {
+            let next = result[(x - 1) as usize] + result[(x - 2) as usize];
+            result.push(next);
+        }
+    }
+    result[n as usize]
 }
-
 #[cfg(test)]
 mod tests {
     use crate::fibonacci;
